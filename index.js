@@ -1,6 +1,13 @@
 function fetchBooks() {
-
-}
+  const response = fetch('https://anapioficeandfire.com/api/books')
+  .then(function(rps){
+    return rps.json();
+  })
+  .then(function(json){
+    renderBooks(json);
+  });
+  return response;
+};
 
 function renderBooks(json) {
   const main = document.querySelector('main')
@@ -14,3 +21,6 @@ function renderBooks(json) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+
+
