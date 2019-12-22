@@ -10,9 +10,21 @@ function renderBooks(json) {
     const h2 = document.createElement('h2')
     h2.innerHTML = `<h2>${book.name}</h2>`
     main.appendChild(h2)
+
+    
   })
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   fetchBooks()
 })
+
+function totalPages() {
+
+
+
+
+let totalPage=0;
+for (let i = 0; i< myJson.length; i++){
+  totalPage+=myJson[i]["numberOfPages"]
+}
